@@ -28,12 +28,15 @@
     });
 	}
 
+
 	ethEnabled();
 
 	getAccounts(function(result) {
-    console.log(result[0]);
+		var address = result[0];
+		console.log(result[0]);
 		document.getElementById('wallet').innerHTML = result[0];
-});
+		var balance = web3.eth.getBalance(address).then(function(balance) {document.getElementById('balance').innerHTML = balance;});
+	});
 
 </script>
 
@@ -43,5 +46,6 @@
  <p>Hello world, I am Web3.</p>
  <button onclick="ethEnabled();">Run me!</button>
  <div id="wallet"></div>
+ <div id="balance"></div>
 	</body>
 </html>
