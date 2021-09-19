@@ -1,21 +1,21 @@
 {
-  "name": "swire-bot",
+  "name": "web3-hello-world",
   "version": "1.0.0",
-  "description": "Swire Bot",
+  "description": "Web3 Hello World",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git + https://github.com/TrevorFrench/swirebot"
+    "url": "git + https://github.com/TrevorFrench/web3"
   },
   "author": "Trevor French",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TrevorFrench/swirebot"
+    "url": "https://github.com/TrevorFrench/web3"
   },
-  "homepage": "https://github.com/TrevorFrench/swirebot#readme",
+  "homepage": "https://github.com/TrevorFrench/web3#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "chart.js": "^2.9.4",
@@ -28,7 +28,9 @@
     "jquery": "^3.5.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7",
-    "pg": "^8.5.1"
+    "pg": "^8.5.1",
+    "requirejs": "^2.3.6",
+    "web3": "^1.5.2"
   },
   "engines": {
     "node": "10.x"

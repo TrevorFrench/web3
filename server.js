@@ -2,7 +2,7 @@
 //-----------------------------------------------------------------
 //---------------------------ACTION LIST---------------------------
 //-----------------------------------------------------------------
-/* - 
+/* -
 */
 
 //-----------------------------------------------------------------
@@ -12,6 +12,8 @@ const express = require('express');                                 // easier to
 const path = require('path');                                       // works with diretories and file paths
 var bodyParser = require("body-parser");                            // middleware
 const app = express();                                              // instantiate the module into a variable
+
+const wb3 = require('./queries')                                   // reference queries.js to interact with postgreSQL database
 
 //-----------------------------------------------------------------
 //------------------------ENVIRONMENT SETUP------------------------
