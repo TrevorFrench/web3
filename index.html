@@ -39,12 +39,29 @@
 	});
 
 </script>
-
+<style>
+	body {margin: 0px; margin-top:0px; background-color: #32323e; font-family: 'Courier New', monospace;}
+	button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
 	</head>
 
 	<body>
- <p>Hello world, I am Web3.</p>
- <button onclick="ethEnabled();">Run me!</button>
+		<div style="width:100%; background-color:black; display: block; padding-top: 40px; padding-bottom:40px;">
+			<div style="color:white; display:inline; font-size: 40px; padding-left: 10px;"><b>helloWorld(web, v3)</b></div>
+			<div style="display:inline; float:right; padding-right: 10px;"><button onclick="ethEnabled();">Run me!</button></div>
+		</div>
+
  <div id="wallet"></div>
  <div id="balance"></div>
 	</body>
