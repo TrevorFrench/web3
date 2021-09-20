@@ -28,15 +28,34 @@
     });
 	}
 
+	async function checkConnected() {
+		if (!web3.currentProvider.connected) {
+			document.getElementById('walletConnect').innerHTML = "Connect plz"
+
+		}
+
+		document.getElementById('walletConnect').innerHTML = "Connected"
+
+	}
 
 	ethEnabled();
+
+	setInterval(checkConnected, 2000)
+	window.addEventListener('focus', checkConnected) /*doesn't work when disconnect after the fact*/
 
 	getAccounts(function(result) {
 		var address = result[0];
 		console.log(result[0]);
-		document.getElementById('wallet').innerHTML = result[0];
-		var balance = web3.eth.getBalance(address).then(function(balance) {document.getElementById('balance').innerHTML = balance;});
+		document.getElementById('wallet').innerHTML = "Address: " + result[0];
+		var balance = web3.eth.getBalance(address).then(function(balance) {document.getElementById('balance').innerHTML = "Balance: " + balance + "gwei";});
 	});
+
+	function refresh() {getAccounts(function(result) {
+		var address = result[0];
+		console.log(result[0]);
+		document.getElementById('wallet').innerHTML = "Address: " + result[0];
+		var balance = web3.eth.getBalance(address).then(function(balance) {document.getElementById('balance').innerHTML = "Balance: " + balance + " gwei";});
+	});};
 
 </script>
 <style>
@@ -59,10 +78,14 @@
 	<body>
 		<div style="width:100%; background-color:black; display: block; padding-top: 40px; padding-bottom:40px;">
 			<div style="color:white; display:inline; font-size: 40px; padding-left: 10px;"><b>helloWorld(web, v3)</b></div>
-			<div style="display:inline; float:right; padding-right: 10px;"><button onclick="ethEnabled();">Run me!</button></div>
+			<div style="display:inline; float:right; padding-right: 10px;"><button id='walletConnect' onclick="ethEnabled();">Connect</button></div>
 		</div>
+<div id='body' class='body' style='padding:45px;'>
 
- <div id="wallet"></div>
- <div id="balance"></div>
+ <div id="wallet" style="color: white;"></div>
+ <div id="balance" style="color: white;"></div>
+ <br>
+ 	<button onclick="refresh()">Refresh</button>
+</div>
 	</body>
 </html>
